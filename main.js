@@ -3,6 +3,14 @@ class LinkedList{
         this.head = head;
     }
 
+    tail = () => {
+        let node = this.head;
+        while(node.next){
+            node = node.next;
+        }
+        return node;
+    };
+
     getHead = () => this.head;
 
     size = () => {
