@@ -3,6 +3,16 @@ class LinkedList{
         this.head = head;
     }
 
+    toString = () => {
+        let node = this.head;
+        let string = '';
+        while(node){
+            string += `( ${node.value} ) -> `;
+            node = node.next;
+        }
+        return string + 'null';
+    };
+
     find = value => {
         let node = this.head;
         while(node){
