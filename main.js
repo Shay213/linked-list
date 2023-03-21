@@ -3,6 +3,15 @@ class LinkedList{
         this.head = head;
     }
 
+    find = value => {
+        let node = this.head;
+        while(node){
+            if(node.value === value) return node;
+            node = node.next;
+        }
+        return null;
+    };
+
     contains = value => {
         let node = this.head;
         while(node){
