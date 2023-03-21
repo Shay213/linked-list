@@ -3,6 +3,16 @@ class LinkedList{
         this.head = head;
     }
 
+    prepend = newNode => {
+        let node = this.head;
+        if(!node){
+            this.head = newNode;
+            return;
+        }
+        newNode.next = node;
+        this.head = newNode;
+    };
+
     append = newNode => {
         let node = this.head;
         if(!node){
