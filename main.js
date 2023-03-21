@@ -3,6 +3,31 @@ class LinkedList{
         this.head = head;
     }
 
+    insertAt = (value, index) => {
+        let node = this.head;
+        let i = 0;
+        let newNode = new Node(value);
+        if(index === 0){
+            if(!node) this.head = newNode;
+            else{
+                newNode.next = node;
+                this.head = newNode;
+            }
+            return;
+        }
+        else{
+            while(node){
+                if(i === index-1){
+                    newNode.next = node.next;
+                    node.next = newNode;
+                    return;
+                }
+                i++;
+                node = node.next;
+            }
+        }
+    };
+
     toString = () => {
         let node = this.head;
         let string = '';
